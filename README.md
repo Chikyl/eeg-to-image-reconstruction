@@ -13,10 +13,6 @@ A deep learning framework for decoding visual image representations from EEG sig
 - [Training and Optimization](#training-and-optimization)
 - [Evaluation Metrics](#evaluation-metrics)
 - [Results](#results)
-- [Ensembling](#ensembling)
-- [Submission and Outputs](#submission-and-outputs)
-- [Requirements](#requirements)
-- [Running the Notebook](#running-the-notebook)
 
 ## Overview
 
@@ -196,18 +192,4 @@ The optimized ensemble assigns different contributions to the five architectures
 
 Overall, the OOF-optimized ensemble provides the strongest TEST MRP and concept-level retrieval performance among the evaluated configurations.
 
-## Ensembling
-
-The final ensemble combines predictions from all five architectures.
-
-### Out-of-Fold Optimization
-
-Each architecture produces predictions on its corresponding held-out fold. These predictions are pooled across folds to create a common OOF evaluation set.
-
-Architecture weights are searched on a simplex grid with a step size of 0.1.
-
-The selection objective combines concept-level Top-5 accuracy and MRP:
-
-```python
-Top-5 Accuracy + 0.5 × MRP
 
